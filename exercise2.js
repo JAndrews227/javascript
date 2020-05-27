@@ -11,7 +11,11 @@ for(let i=0; i<10; i++) {
 
 //your code...
 
-
+var i = 0;
+while (i<10) {
+    console.log(" the value of i in the loop is : " + i);
+    i++;
+}
 
 
 /************************************************************* */
@@ -20,6 +24,12 @@ for(let i=0; i<10; i++) {
 //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
 //your code...
+
+var sum1 = (30 + (2 *20));
+console.log(sum1);
+
+var sum2 = (70 / (10^2));
+console.log(sum2);
 
 
 /************************************************************* */
@@ -46,7 +56,7 @@ for(let i=0; i<10; i++) {
 // Problem 4:
 // Refactor the following code using a switch statement:
 
-const day = "friday";
+/*const day = "friday";
 
 if(day === "monday") {
     console.log("we got a long week ahead of us...");
@@ -61,8 +71,32 @@ if(day === "monday") {
 } else {
     console.log("It's a weekend!")
 }
+*/
 
+var day, log;
+switch (new Date().getDay()) {
+  case 1:
+    day = "Monday";
+    log = 'Monday - We got a long week ahead of us...';
+    break;
+  case 2:
+    day = "Tuesday";
+    log = "Tuesday - still better than Monday, but LONG way to go still"
 
+    break;
+  case 3:
+    day = "Wednesday";
+    log = "Wednesday - We are smack dab in the middle of the week"
+    break;
+  case 4:
+    day = "Thursday";
+    log = "Thursday night... the mood is right"
+    break;
+  case 5:
+    day = "Friday";
+    log = "TGIF.  Friday truly is the best day of the week!"
+}
+    console.log(log)
 
 /************************************************************* */
 // Problem 5: Refactor the following functions to use a ternary expression:
@@ -96,6 +130,16 @@ if (age > 65) console.log("retired"); else {
 */
 
 //your code...
+
+var aboutMe = {
+
+name: 'Jeramie';
+age: 38;
+gender: 'male';
+hobbies: 'woodworking';
+profession: 'student';
+education: 'Bachelors Degree';
+}
 
 
 /************************************************************* */
