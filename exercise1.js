@@ -7,7 +7,17 @@
 
 //your code...
 
+//Farhrenheit to Celcius (\u00B0 = degrees symbol)
 
+var inputFahrenheit  = 68;
+var outputCelsius = (inputFahrenheit - 32)/9 * 5;
+console.log(inputFahrenheit + '\u00B0 Fahrenheit is ' + outputCelsius + '\u00B0 Celsious.');
+
+//Celcius to Farhrenheit
+
+var inputCelsius  = 20;
+var outputFahrenheit = (inputCelsius * 9)/5 + 32;
+console.log(inputCelsius + '\u00B0 Celsious is ' + outputFahrenheit + '\u00B0 Fahrenheit');
 
 
 
@@ -18,7 +28,15 @@
 
 //your code...
 
+var age = '45';
 
+if (age >17) {
+    console.log('Yes, You Can Vote!');
+} 
+else {
+    console.log('No, You Cannot Vote.')
+}
+    
 
 
 
@@ -29,6 +47,15 @@
 // Write a JavaScript function that converts a string to an array. Declare a string variable with "The five boxing wizards jump quickly." Use the split() method to turn the string into an array of strings. (Be sure you separate the string into words, not characters.) After you have finished, use the join() method to change the array back into a string.
 
 //your code...
+
+var str = "The five boxing wizards jump quickly.";
+var ar = str.split(" ");
+console.log(ar)
+
+
+console.log(ar.join(" "));
+
+
 
 
 
@@ -42,6 +69,13 @@
 
 //your code...
 
+function numFlip (x)
+{
+    x = x + "";
+    return x.split ("").reverse().join("")
+}
+
+    console.log(numFlip(9406483584))
 
 
 
@@ -52,6 +86,14 @@
 
 //your code...
 
+var truck = {
+    make:'RAM', 
+    model:'1500', 
+    year:'2020', 
+    color:'black'
+};
+
+console.log('I drive a' + ' ' + truck.year + ' ' + truck.color + ' ' + truck.make +' '  + truck.model);
 
 
 
@@ -64,7 +106,15 @@
 
 //your code...
 
-
+for (var i = 0; i <= 15; i++) 
+{
+    if (i % 2 === 0) {
+        console.log(i + 'is an even number');
+    } 
+    else {
+        console.log(i + 'is an odd number');
+    }
+}
 
 
 /************************************************************* */
@@ -72,6 +122,27 @@
 // Write a JavaScript function that iterates the integers from 1 to 100. For multiples of 3 print "TEK" instead of the number and for multiples of 5, print "camp." For numbers that are multiples of both 3 and 5, print "TEKcamp."
 
 //your code...
+
+for ( var i = 1; i <= 100; i++ )
+{
+  if ( i%3 === 0 && i%5 === 0 )
+  {
+    console.log( 'TEKcamp' );
+  }
+  else if ( i%3 === 0 ) 
+  {
+    console.log('TEK' );
+  }
+  else if ( i%5 === 0 ) 
+  {
+    console.log('camp' );
+  }
+  else
+  {
+    console.log(i);
+  }
+}
+
 
 
 /************************************************************* */
@@ -83,16 +154,27 @@ const nums = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 
 //your code...
 
+for (var i = 0; i <= 10; i += 3) {
+    console.log(i);
+}
 
 
 // Problem 9:
 const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {school : 'TEKcamp'} ];
 //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
 
+foodArray[6] ='TEKcamp';
+console.log(foodArray)
+
 const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','amazing'];
+
+
 // Using both nameArray and adjectiveArray, make a
 // "for" loop that console.log()'s a sentence for each
 // corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  "Potatoes are salty", "Lemon is sour".
+
+
+
 
 /************************************************************* */
 // Bonus Assignment: Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly does one of the 4 operations whenever it is run.  the doMath() function should print out what mathetmatical function was carried out.  The doMath() function should return the computed value of any operation performed.
