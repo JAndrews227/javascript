@@ -4,10 +4,10 @@
 // Problem 1: Refactor the for() loop to be a while loop.
 //
 
-for(let i=0; i<10; i++) {
+/*for(let i=0; i<10; i++) {
     console.log(" the value of i in the loop is : " + i);
 }
-
+*/
 
 //your code...
 
@@ -25,11 +25,23 @@ while (i<10) {
 
 //your code...
 
-var sum1 = (30 + (2 *20));
-console.log(sum1);
 
-var sum2 = (70 / (10^2));
-console.log(sum2);
+let a = 30;
+let addition = function() {
+    a = a + 2;
+}
+let mult = function() {
+    b = a * 20;
+}
+let div = function() {
+    c = b / 10 ** 2
+}
+addition();
+mult();
+div();
+
+console.log(c);
+
 
 
 /************************************************************* */
@@ -49,7 +61,47 @@ console.log(sum2);
 // undefined
 // ""
 
+function logTorF (val) {
+    if (val) {
+        console.log("Truthy");
+    } else {
+        console.log("Falsy");
+    }
+}
+logTorF(20);
+console.log("-- Number 20 is not 0");
 
+logTorF(0);
+console.log("-- 0 holds not value");
+
+logTorF("zero");
+console.log("--zero is a string with quoatations");
+
+console.log("--Const zero = 20 is truthy because it is locking a variable to a value");
+
+logTorF(null);
+console.log("--null is equivalent to undefined but nothing else");
+
+logTorF("0");
+console.log("-- sting contains 0");
+
+logTorF(!"");
+console.log("-- really not sure at the momemt FIND OUT");
+
+logTorF(125);
+console.log("-- numbers not 0 are truthy");
+
+//logTorF(() => {console.log("hello TEKcamp!");
+//console.log("-- empty object");
+
+logTorF({});
+console.log("-- empty object");
+
+logTorF(undefined);
+console.log("-- equal to null");
+
+logTorF("");
+console.log("-- empty string");
 
 
 /************************************************************* */
@@ -77,26 +129,26 @@ var day, log;
 switch (new Date().getDay()) {
   case 1:
     day = "Monday";
-    log = 'Monday - We got a long week ahead of us...';
+    log = '- We got a long week ahead of us...';
     break;
   case 2:
     day = "Tuesday";
-    log = "Tuesday - still better than Monday, but LONG way to go still"
+    log = "- still better than Monday, but LONG way to go still"
 
     break;
   case 3:
     day = "Wednesday";
-    log = "Wednesday - We are smack dab in the middle of the week"
+    log = "- We are smack dab in the middle of the week"
     break;
   case 4:
     day = "Thursday";
-    log = "Thursday night... the mood is right"
+    log = "- At night... the mood is right"
     break;
   case 5:
     day = "Friday";
-    log = "TGIF.  Friday truly is the best day of the week!"
+    log = "- TGIF.  Friday truly is the best day of the week!"
 }
-    console.log(log)
+    console.log(day + log)
 
 /************************************************************* */
 // Problem 5: Refactor the following functions to use a ternary expression:
@@ -132,14 +184,24 @@ if (age > 65) console.log("retired"); else {
 //your code...
 
 var aboutMe = {
+name: 'Jeramie',
+age: 38,
+gender: 'male',
+hobbies: 'woodworking',
+profession: 'student',
+education: 'Bachelors Degree',
+learn: function() {
+    return this.name;
+    },
 
-name: 'Jeramie';
-age: 38;
-gender: 'male';
-hobbies: 'woodworking';
-profession: 'student';
-education: 'Bachelors Degree';
+getAge: function() {
+    return this.age;
 }
+};
+
+console.log(aboutMe.learn());
+
+console.log(aboutMe.getAge());
 
 
 /************************************************************* */
@@ -147,6 +209,17 @@ education: 'Bachelors Degree';
 
 //your code...
 
+var truck = {
+    year: 2020,
+    make: 'RAM',
+    model: 1500,
+    color: 'black',
+    drives: function() {
+        return this.model;
+        }
+}
+    
+console.log(truck.drives());
 
 
 /************************************************************* */
