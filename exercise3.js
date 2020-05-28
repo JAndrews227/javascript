@@ -9,8 +9,14 @@
 
 //your code...
 
-
-
+blankTorF = function(input) {
+    if (input.length === 0)
+    return true;
+    else
+    return false;
+}
+    console.log(blankTorF(''));
+    console.log(blankTorF('abcd'));
 
 
 /************************************************************* */
@@ -22,6 +28,14 @@
 
 //your code...
 
+var myStr = "Learning Javascript is fun!";
+
+var newStr = myStr.replace(/fun!/g, "OVERWHELMING!");
+
+console.log(newStr);
+
+
+
 
 
 
@@ -32,6 +46,15 @@
 
 
 //your code...
+
+const nums = [1, 2, 3, 4, 5];
+
+const square = nums.map(el => el **2) 
+
+console.log(square)
+
+
+
 
 
 
@@ -46,6 +69,11 @@
 
 //your code...
 
+const arr = [1, 3, 5, 7, 9, 1, 3, 5];
+
+const arrTwo = arr.map(el => el > 3) 
+
+console.log(arrTwo)
 
 
 
@@ -59,8 +87,16 @@
 
 //your code...
 
+// good example on stackoverflow.com to add arrow function for quicker code
+/*
+'Your REDUCER function's returned value is assigned to the accumulator, 
+whose value is remembered across each iteration throughout the array, 
+and ultimately becomes the final, single resulting value' - monzilla.org (array/reduce)
+*/
 
+const sumAll = [30, 20, 5, 65, 10].reduce((all_sum, a) => all_sum + a, 0); 
 
+console.log(sumAll);
 
 
 
