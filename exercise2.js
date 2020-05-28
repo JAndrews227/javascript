@@ -27,18 +27,18 @@ while (i<10) {
 
 
 let a = 30;
-let addition = function() {
+let add = function() {
     a = a + 2;
 }
-let mult = function() {
+let multiply = function() {
     b = a * 20;
 }
-let div = function() {
+let divide = function() {
     c = b / 10 ** 2
 }
-addition();
-mult();
-div();
+add();
+multiply();
+divide();
 
 console.log(c);
 
@@ -83,7 +83,7 @@ logTorF(null);
 console.log("--null is equivalent to undefined but nothing else");
 
 logTorF("0");
-console.log("-- sting contains 0");
+console.log("-- string contains 0");
 
 logTorF(!"");
 console.log("-- really not sure at the momemt FIND OUT");
@@ -91,8 +91,9 @@ console.log("-- really not sure at the momemt FIND OUT");
 logTorF(125);
 console.log("-- numbers not 0 are truthy");
 
-//logTorF(() => {console.log("hello TEKcamp!");
-//console.log("-- empty object");
+console.log("Truthy")
+console.log('()) => {console.log("hello TEKcamp!") has value');
+
 
 logTorF({});
 console.log("-- empty object");
@@ -152,6 +153,8 @@ switch (new Date().getDay()) {
 
 /************************************************************* */
 // Problem 5: Refactor the following functions to use a ternary expression:
+
+/*
 const age = 10;
 if (age > 21) console.log("adult"); else {
     console.log("minor");
@@ -164,6 +167,28 @@ if (age > 13 && age < 19) console.log('teen'); else {
 if (age > 65) console.log("retired"); else {
     console.log("still working...");
 }
+
+*/
+
+
+const age = 10;
+
+const minAdult = (age > 21) ? 'Adult' : 'Minor';
+
+console.log(minAdult);
+
+const teen = (age > 13 && age < 19) ? 'Teenager' : 'Not a Teenager';
+
+console.log(teen);
+
+const retired = (age > 65) ? 'Retired' : 'Still working';
+
+console.log(retired);
+
+
+
+
+
 
 
 /************************************************************* */
@@ -191,11 +216,11 @@ hobbies: 'woodworking',
 profession: 'student',
 education: 'Bachelors Degree',
 learn: function() {
-    return this.name;
+    return "A" + " " + this.profession + " " + "named" + " " + this.name;
     },
 
 getAge: function() {
-    return this.age;
+    return this.name + " " + "is" + " " + this.age + " " + "years old";
 }
 };
 
@@ -209,14 +234,14 @@ console.log(aboutMe.getAge());
 
 //your code...
 
-var truck = {
+const truck = {
     year: 2020,
     make: 'RAM',
     model: 1500,
-    color: 'black',
+    color: 'Black',
     drives: function() {
-        return this.model;
-        }
+        return "I drive a" + " " + this.color + " " + this.year + " " + this.make + " " + this.model;
+    }
 }
     
 console.log(truck.drives());
@@ -227,7 +252,24 @@ console.log(truck.drives());
 
 //your code...
 
-
+const dataTypes = {
+    dataOne: 'Class',
+    dataTwo: 'Strings',
+    dataThree: 'Boolean',
+    likeOne: function() {
+        return "I like" + " " + this.dataOne + " " + "because, you can group attributes of an item into one data type."
+    },
+    likeTwo: function() {
+        return "I like" + " " + this.dataTwo + " " + "because, it allows to represent textual data to users."
+    }, 
+    likeThree: function() {
+        return "I like" + " " + this.dataThree + " " + "because, it real time it allows you to narrow a search."
+    }
+};
+    console.log(dataTypes.likeOne());
+    console.log(dataTypes.likeTwo());
+    console.log(dataTypes.likeThree())
+    
 
 /************************************************************* */
 //Bonus assignments:
