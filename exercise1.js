@@ -173,6 +173,11 @@ const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','ama
 // "for" loop that console.log()'s a sentence for each
 // corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  "Potatoes are salty", "Lemon is sour".
 
+var i;
+for (i=0; i < foodArray.length; i++) {
+  var word = (foodArray[i] [foodArray[i].length-1] == 's' ? 'are' : 'is');
+  console.log(foodArray[i] + " " + word + " " + adjectiveArray[i] + ".");
+}
 
 
 
