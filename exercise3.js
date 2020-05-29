@@ -69,12 +69,15 @@ console.log(square)
 
 //your code...
 
-const arr = [1, 3, 5, 7, 9, 1, 3, 5];
-
-const arrTwo = arr.map(el => el > 3) 
-
-console.log(arrTwo)
-
+function Greaterthan(val)
+   {
+     return function(evalue, index, array)
+     {
+     return (evalue >= val);
+     };
+   }
+var result = [1, 3, 5, 7, 9, 1, 3, 5]. filter(Greaterthan(3));
+console.log(result);
 
 
 
@@ -94,7 +97,7 @@ whose value is remembered across each iteration throughout the array,
 and ultimately becomes the final, single resulting value' - monzilla.org (array/reduce)
 */
 
-const sumAll = [30, 20, 5, 65, 10].reduce((all_sum, a) => all_sum + a, 0); 
+const sumAll = [30, 20, 5, 65, 10].reduce((all_sum, i) => all_sum + i, 0); 
 
 console.log(sumAll);
 
@@ -106,11 +109,24 @@ console.log(sumAll);
 
 // Write a function that takes in a DNA string as a parameter and returns an array with the complementary strand. For example, a string of "GCTA" would return an array of ["C", "G", "A", "T"].  
 
-
-
 //your code...
 
+//https://stackoverflow.com/questions/33335650/are-these-javascript-dna-complement-algorithms-equivalent-optimal
 
+
+function strand(a) {
+    return { A: 'T', T: 'A', G: 'C', C: 'G' }[a];
+}    
+
+//created input strand
+var blood = 'AGTCTGCA',
+    
+    //split sequence to split, map from strand function to join matching pairs.
+
+    strandSeq = blood.split('').map(strand).join('');
+
+
+    console.log(strandSeq);
 
 
 
@@ -121,15 +137,36 @@ console.log(sumAll);
 // 7.a - Write a function to find the maximum numerical value of the given array.  Get rid of any non numerical values.  Convert the strings that are numbers to an actual number data type.  ("one" => 1) ("1" => 1).  Use array methods to perform this task.  
 const numbers = [2,23,1,2,1,1,1,2,2.5,20,200,2000,,{k:1},20000,19999,1878,140,23,4,"sk",true,true,"true-dat","nice","one","two","three","3","tea",[]];
 
-function maxNumber(numbers) {
-    //your code...
-}
+
+    //your code... Followed steps from Amir
+
+
+const truthys = numbers.filter(element => element);
+const primitives = truthys.filter(n => typeof n != 'object');
+const noBooleans = primitives.filter(p => typeof p != 'boolean');
+
+const numString = ["zero","one","two","three"];
+const numWithstring = noBooleans.map(nb => numString.includes(nb) ? numString.indexOf(nb) : nb);
+
+const numbersTwo = numWithstring.filter(n => typeof n != 'string');
+
+console.log(numbersTwo);
+
+
 
 // 7.b -Write a function that sorts the given numbers array.  Allow the function to sort the array in descending order
 
-function sortNums(numbers,desc=false) {
-    //your code...
-};
+
+ //your code...
+
+ function descend(a, b) {
+    if (a>b) return -1;
+    else if (a<b) return 1;
+    else return 0;
+  }
+  var numbersThree = (numbersTwo)
+  numbersThree.sort(descend);
+  console.log(numbersThree);
 
 
 
@@ -138,34 +175,64 @@ function sortNums(numbers,desc=false) {
 // Problem 8:
 //add an example of at least 5 JavaScript data types to the given mapObj.  The key is the example data type, and the value is the name of the data type.  An object data type has already been set as the 1st key / val pair.
 
+
 const mapObj = new Map();
-mapObj.set({company : "TEKsystems"},"object");
+mapObj.set("TEKsystems", "object");
+mapObj.set("Bill","string");
+mapObj.set(38, "number");
+mapObj.set("RamRod","undefined");
+mapObj.set("Prince","symbol");
 
 
-console.log(mapObj.has({company : "TEKsystems"}));  
-//The above console.log() statmeent returns false.  Write another console.log() statement explaining why this line of code prints false.  Refactor the code on line 106, so you can successfully check to see if {company : "TEKsystems"} exists in the mapObj.
+console.log(mapObj.has("TEKsystems"));  
 
-//your code...
+//The above console.log() statement returns false.  Write another console.log() statement explaining why this line of code prints false.  Refactor the code on line 106, so you can successfully check to see if {company : "TEKsystems"} exists in the mapObj.
+
+console.log('Returns false due to comapny not being set or recognize. Changed code above.')
+
+
 
 //loop through the mapObj and create a new array of only the data types, leaving out the example keys of the mapObj.  Use array methods to do this.  Example output : ['string',number','boolean',array','object']
 
 
+for (const [key, value] of mapObj.entries()) {
+  console.log([value]);
+
+}
+
+ 
 /************************************************************* */
 //Problem 11:
 
 let ones = [1,11,111,1111,11111,111111,1111111,11111111,111111111,1111111111];
 //reverse the array, without modifying the ones array.
 
+var flip = ones.reverse();
+
+console.log(flip);
 
 /************************************************************* */
 //Problem 12:
 //create a function called performer(cb) that takes in a callback function and runs that callback function.  It should return the output of the callback function.
 
-function performer(cb) {
-    //code goes here
+function performer(data,cb) {
+
+    if ( !cb || !( typeof cb === 'function')) {
+        throw new Message('Invalid callback. Please look over your function.');
+    }
+    console.log(data);
+    setTimeout(cb, 10);
+
 }
+    try {
+        performer(1, null);
+    } catch (err) {
+        console.log('ERROR: What are you doing here?');
+    }
 
-
+    performer(1, () => {
+        console.log('Here is your CALLBACK!')
+    } );
 /************************************************************* */
 //Bonus assignment:
 //research a new feature of ES6+ and create an example of it's use case here.  Be sure to write comments explaining what the feature is and why it is useful.
