@@ -5,16 +5,9 @@
   <head>
     <meta charset="utf-8">
     <title>Shopping list example</title>
+    <link rel="stylesheet" type="text/css" href="shopping-list.css">
     <style>
-      li {
-        margin-bottom: 10px;
-      }
 
-      li button {
-        font-size: 8px;
-        margin-left: 20px;
-        color: #666;
-      }
     </style>
   </head>
   <body>
@@ -32,6 +25,58 @@
     </ul>
 
     <script>
+
+        //Create three variables that hold references to the list (<ul>), <input>, and <button> elements.
+      const list = document.querySelector('ul');
+      const button = document.querySelector('button');
+      const input = document.querySelector('input');
+      
+
+      //Create a function that will run in response to the button being clicked.
+
+      button.onclick = function() {
+        
+      //Inside the function body, start off by storing the current value of the input element in a variable.
+        let aItem = input.value;
+
+      //Next, empty the input element by setting its value to an empty string — ''.
+        input.value = '';
+
+      //Create three new elements — a list item (<li>), <span>, and <button>, and store them in variables.
+
+      const addItem = document.createElement('li');
+      const addText = document.createElement('span');  
+      const delBtn = document.createElement('button');
+      
+
+      //Append the span and the button as children of the list item.
+          addItem.appendChild(addText);
+          
+          addText.textContent = aItem;
+          
+          addItem.appendChild(delBtn);
+          
+
+      //Set the text content of the span to the input element value you saved earlier, and the text content of the button to 'Delete'
+          delBtn.textContent = 'Delete';
+          
+
+      //Append the list item as a child of the list.
+          list.appendChild(addItem);
+
+
+      //Attach an event handler to the delete button, so that when clicked it will delete the entire list item it is inside.
+          delBtn.onlick = function(e) {
+            list.removeChild(addItem);
+          }
+
+      //Finally, use the focus() method to focus the input element ready for entering the next shopping list item.
+      //This put the cursor or 'focus' back the the add item box after button click    
+          input.focus();
+
+      }
+
+
 
     </script>
   </body>
