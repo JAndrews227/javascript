@@ -4,14 +4,18 @@
 // Problem 1: Refactor the for() loop to be a while loop.
 //
 
-for(let i=0; i<10; i++) {
+/*for(let i=0; i<10; i++) {
     console.log(" the value of i in the loop is : " + i);
 }
-
+*/
 
 //your code...
 
-
+var i = 0;
+while (i<10) {
+    console.log(" the value of i in the loop is : " + i);
+    i++;
+}
 
 
 /************************************************************* */
@@ -20,6 +24,24 @@ for(let i=0; i<10; i++) {
 //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
 //your code...
+
+
+let a = 30;
+let add = function() {
+    a = a + 2;
+}
+let multiply = function() {
+    b = a * 20;
+}
+let divide = function() {
+    c = b / 10 ** 2
+}
+add();
+multiply();
+divide();
+
+console.log(c);
+
 
 
 /************************************************************* */
@@ -39,14 +61,55 @@ for(let i=0; i<10; i++) {
 // undefined
 // ""
 
+function logTorF (val) {
+    if (val) {
+        console.log("Truthy");
+    } else {
+        console.log("Falsy");
+    }
+}
+logTorF(20);
+console.log("-- Number 20 is not 0");
 
+logTorF(0);
+console.log("-- 0 holds not value");
+
+logTorF("zero");
+console.log("--zero is a string with quoatations");
+
+console.log("--Const zero = 20 is truthy because it is locking a variable to a value");
+
+logTorF(null);
+console.log("--null is equivalent to undefined but nothing else");
+
+logTorF("0");
+console.log("-- string contains 0");
+
+logTorF(!"");
+console.log("-- really not sure at the momemt FIND OUT");
+
+logTorF(125);
+console.log("-- numbers not 0 are truthy");
+
+console.log("Truthy")
+console.log('()) => {console.log("hello TEKcamp!") has value');
+
+
+logTorF({});
+console.log("-- empty object");
+
+logTorF(undefined);
+console.log("-- equal to null");
+
+logTorF("");
+console.log("-- empty string");
 
 
 /************************************************************* */
 // Problem 4:
 // Refactor the following code using a switch statement:
 
-const day = "friday";
+/*const day = "friday";
 
 if(day === "monday") {
     console.log("we got a long week ahead of us...");
@@ -61,11 +124,37 @@ if(day === "monday") {
 } else {
     console.log("It's a weekend!")
 }
+*/
 
+var day, log;
+switch (new Date().getDay()) {
+  case 1:
+    day = "Monday";
+    log = '- We got a long week ahead of us...';
+    break;
+  case 2:
+    day = "Tuesday";
+    log = "- still better than Monday, but LONG way to go still"
 
+    break;
+  case 3:
+    day = "Wednesday";
+    log = "- We are smack dab in the middle of the week"
+    break;
+  case 4:
+    day = "Thursday";
+    log = "- At night... the mood is right"
+    break;
+  case 5:
+    day = "Friday";
+    log = "- TGIF.  Friday truly is the best day of the week!"
+}
+    console.log(day + log)
 
 /************************************************************* */
 // Problem 5: Refactor the following functions to use a ternary expression:
+
+/*
 const age = 10;
 if (age > 21) console.log("adult"); else {
     console.log("minor");
@@ -78,6 +167,28 @@ if (age > 13 && age < 19) console.log('teen'); else {
 if (age > 65) console.log("retired"); else {
     console.log("still working...");
 }
+
+*/
+
+
+const age = 10;
+
+const minAdult = (age > 21) ? 'Adult' : 'Minor';
+
+console.log(minAdult);
+
+const teen = (age > 13 && age < 19) ? 'Teenager' : 'Not a Teenager';
+
+console.log(teen);
+
+const retired = (age > 65) ? 'Retired' : 'Still working';
+
+console.log(retired);
+
+
+
+
+
 
 
 /************************************************************* */
@@ -97,12 +208,43 @@ if (age > 65) console.log("retired"); else {
 
 //your code...
 
+var aboutMe = {
+name: 'Jeramie',
+age: 38,
+gender: 'male',
+hobbies: 'woodworking',
+profession: 'student',
+education: 'Bachelors Degree',
+learn: function() {
+    return "A" + " " + this.profession + " " + "named" + " " + this.name;
+    },
+
+getAge: function() {
+    return this.name + " " + "is" + " " + this.age + " " + "years old";
+}
+};
+
+console.log(aboutMe.learn());
+
+console.log(aboutMe.getAge());
+
 
 /************************************************************* */
 // Problem 6: Create an object literal that represents any object in the real world that you like.  Try to come up with a realistic set of properties and methods that would accurately describe that object.  In at least one of your methods, use the this keyword to refer back to one of the properties you defined on this object literal.  
 
 //your code...
 
+const truck = {
+    year: 2020,
+    make: 'RAM',
+    model: 1500,
+    color: 'Black',
+    drives: function() {
+        return "I drive a" + " " + this.color + " " + this.year + " " + this.make + " " + this.model;
+    }
+}
+    
+console.log(truck.drives());
 
 
 /************************************************************* */
@@ -110,7 +252,24 @@ if (age > 65) console.log("retired"); else {
 
 //your code...
 
-
+const dataTypes = {
+    dataOne: 'Class',
+    dataTwo: 'Strings',
+    dataThree: 'Boolean',
+    likeOne: function() {
+        return "I like" + " " + this.dataOne + " " + "because, you can group attributes of an item into one data type."
+    },
+    likeTwo: function() {
+        return "I like" + " " + this.dataTwo + " " + "because, it allows to represent textual data to users."
+    }, 
+    likeThree: function() {
+        return "I like" + " " + this.dataThree + " " + "because, it real time it allows you to narrow a search."
+    }
+};
+    console.log(dataTypes.likeOne());
+    console.log(dataTypes.likeTwo());
+    console.log(dataTypes.likeThree())
+    
 
 /************************************************************* */
 //Bonus assignments:
